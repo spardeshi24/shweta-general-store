@@ -1,1 +1,351 @@
+body{
+margin:0;
+font-family:Times New Roman;
+}
+
+/* HEADER */
+
+header{
+font-size: 16px;
+font-weight: bold;
+background:#5a3b2e;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 40px;
+}
+
+h2{
+   font-size: 14px;
+   font-weight: bold;
+   margin-top:20px;
+   color:white;
+   text-align:center;
+}
+
+p{
+  font-size:12px;
+  font-weight:bold;
+  line-height:1.4;
+}
+
+/* LOGO */
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-area img{
+width:100px;
+}
+
+/* NAVIGATION */
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-size:18px;
+}
+
+nav a:hover{
+color:#e5c29f;
+}
+
+
+/* Tables for Stock, Billing, Admin Pages */
+table {
+    padding: 15px;
+    border-radius: 12px;
+    border-collapse: collapse;
+    margin: 20px auto;       /* center tables horizontally */
+    width: 80%;
+    background:rgba(255,255,255,0.7);
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+th {
+    background-color: rgba(107,62,38,0.9);
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    color:black;
+}
+
+tr:nth-child(even) {
+    background: rgba(245,245,245,0.6);
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+/* Buttons and Inputs */
+button {
+    background-color: #6b3e26;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;       /* center horizontally */
+}
+
+button:hover {
+    background-color: #1e5e3c;
+}
+
+input {
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 10px auto;       /* center horizontally */
+}
+
+/* HERO SECTION */
+
+.hero{
+height:75vh;
+
+background-image:url('../images/store.jpg');
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex:1;
+}
+
+
+/* WELCOME BOX */
+
+.welcome-box{
+
+background:rgba(90,59,46,0.8);
+
+padding:40px;
+
+border-radius:10px;
+
+color:white;
+
+text-align:center;
+
+width:500px;
+
+}
+
+.welcome-box h2{
+font-size:28px;
+margin-bottom:10px;
+}
+
+/* STOCK */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* horizontal center */
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;          /* space from nav */
+}
+
+/* Table overlay effect (if needed) */
+.table-overlay {
+    background:none;
+    padding:0;
+    border-radius: 12px;
+}
+
+/* Product page background */
+.stock-bg {
+    background-image: url("../images/stock.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 100%;
+    padding-top;0
+}
+
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* horizontal center */
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;          /* space from nav */
+}
+
+/* Table overlay effect (if needed) */
+.table-overlay {
+    background:none;
+    padding:0;
+    border-radius: 12px;
+}
+
+/* Product page background */
+.billing-bg {
+    background-image: url("../images/billing.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 100%;
+    padding-top;0
+}
+
+=========================================
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* horizontal center */
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;          /* space from nav */
+}
+
+/* Table overlay effect (if needed) */
+.table-overlay {
+    background:none;
+    padding:0;
+    border-radius: 12px;
+}
+
+/* Product page background */
+.product-bg {
+    background-image: url("../images/product.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 100%;
+    padding-top;0
+}
+
+=========================================
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* horizontal center */
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+    flex:1;          /* space from nav */
+}
+
+/* Table overlay effect (if needed) */
+.table-overlay {
+    background:none;
+    padding:0;
+    border-radius: 12px;
+}
+
+/* Product page background */
+.admin-bg {
+    background-image: url("../images/admin.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 100%;
+    padding-top;0
+}
+
+
+=========================================
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* horizontal center */
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;          /* space from nav */
+    min-height:calc(100vh-100px);
+    text-align:center;
+}
+
+/* Table overlay effect (if needed) */
+.table-overlay {
+    background:none;
+    padding:0;
+    border-radius: 12px;
+}
+
+/* Product page background */
+.contact-bg {
+    background-image: url("../images/contact.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 100%;
+    padding-top;0
+}
+
+.contact-info{
+ 	text-align:center;
+	color:white;
+	line-height:1.8;
+}
+
+.page-heading{
+	text-align:center;
+	font-weight:bold;
+  	background:rgba(0,0,0,0.4);
+	display:inline-block;
+	padding:12px 30px;
+	border-radius:12px;
+	box-shadow:0 4px  12px rgba(0,0,0,0.3);
+	backdrop-filter:blur(5px);
+	webkit-backdrop-filter:blur(5px);
+	margin:20px auto;
+}
+
+.content-text{
+	text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+background:#5a3b2e;
+color:white;
+text-align:center;
+padding:0.5px;
+min height:100vh;
+margin:0
+top-align:center;
+}
+
+/* Total Amount Styling */
+#totalAmount {
+    color: white;                    /* makes text readable on dark background */
+    font-weight: bold;               /* makes it stand out */
+    font-size: 20px;
+    background: rgba(0,0,0,0.4);     /* subtle dark highlight */
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: inline-block;           /* keeps it like a highlighted block */
+    margin: 20px auto;               /* centers it horizontally */
+}
 
