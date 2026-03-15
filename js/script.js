@@ -1,1 +1,1 @@
-
+console.log("Shweta Genral Store Website Loaded");
