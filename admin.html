@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="admin-bg">
+
+<!-- HEADER -->
+<header>
+
+<div class="logo-area">
+<img src="images/logo.png" alt="logo">
+<h1>SHWETA GENERAL STORE</h1>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="product.html">Product</a>
+<a href="stock.html">Stock</a>
+<a href="billing.html">Billing</a>
+<a href="admin.html">Admin</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<div class="page-container">
+
+<h2 class="page-heading">Here Only Admin Can Login!</h2>
+
+<br><br>
+
+<input type="text" id="id" placeholder="Enter Admin ID"><br><br>
+<input type="password" id="pass" placeholder="Enter Password"><br><br>
+
+<button onclick="login()">Login</button>
+
+<script>
+function login(){
+
+var id=document.getElementById("id").value;
+var pass=document.getElementById("pass").value;
+
+if(id=="shweta" && pass=="1234"){
+alert("Login Successful");
+}
+else{
+alert("Wrong ID or Password");
+}
+
+}
+</script>
+</form>
+</body>
+</html>

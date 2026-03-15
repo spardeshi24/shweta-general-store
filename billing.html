@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Billing</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="billing-bg">
+
+<!-- HEADER -->
+<header>
+
+<div class="logo-area">
+<img src="images/logo.png" alt="logo">
+<h1>SHWETA GENERAL STORE</h1>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="product.html">Product</a>
+<a href="stock.html">Stock</a>
+<a href="billing.html">Billing</a>
+<a href="admin.html">Admin</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<div class="page-container">
+<h2 class="page-heading">ENTER THE DETAILS</h2>
+
+	<input type="text" id="productName" placeholder="Product Name">
+<br><br>
+	<input type="number" id="price" placeholder="Price">
+<br><br>
+	<input type="number" id="quantity" placeholder="Quantity">
+<br><br>
+
+<button onclick="generateBill()">Generate Bill</button>
+
+
+<table id="billTable">
+
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Total</th>
+</tr>
+
+</table>
+
+<div class="total" id="totalAmount">
+Total: ₹0
+</div>
+</div>
+
+<script>
+
+let stock = JSON.parse(localStorage.getItem("stock")) || {};
+let total = 0;
+
+function generateBill(){
+
+let product = document.getElementById("productName").value.toLowerCase();
+let price = parseFloat(document.getElementById("price").value);
+let quantity = parseInt(document.getElementById("quantity").value);
+
+if(product=="" || isNaN(price) || isNaN(quantity)){
+alert("Please fill all details");
+return;
+}
+
+if(!stock[product]){
+alert("Product not available in stock");
+return;
+}
+
+if(stock[product] < quantity){
+alert("Not enough stock available");
+return;
+}
+
+stock[product] -= quantity;
+
+localStorage.setItem("stock", JSON.stringify(stock));
+
+let itemTotal = price * quantity;
+
+total += itemTotal;
+
+let table = document.getElementById("billTable");
+
+let row = table.insertRow();
+
+row.insertCell(0).innerText = product;
+row.insertCell(1).innerText = price;
+row.insertCell(2).innerText = quantity;
+row.insertCell(3).innerText = itemTotal;
+
+document.getElementById("totalAmount").innerText = "Total: ₹" + total;
+
+document.getElementById("productName").value="";
+document.getElementById("price").value="";
+document.getElementById("quantity").value="";
+
+}
+</script>
+</body>
+</html>

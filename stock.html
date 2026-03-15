@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stock</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="stock-bg">
+
+<!-- HEADER -->
+<header>
+
+<div class="logo-area">
+<img src="images/logo.png" alt="logo">
+<h1>SHWETA GENERAL STORE</h1>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="product.html">Product</a>
+<a href="stock.html">Stock</a>
+<a href="billing.html">Billing</a>
+<a href="admin.html">Admin</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+
+<div class="table-overlay">
+
+<div class="page-container">
+<h2 class="page-heading">ENTER THE STOCK</h2>
+
+<input type="text" id="productName" placeholder="Product Name"><br><br>
+
+
+<input type="number" id="productQty" placeholder="Quantity"><br><br>
+
+
+<button onclick="addStock()">Add Stock</button><button onclick="clearStock()">Clear Stock</button>
+
+</div>
+
+<table border="1" id="stockTable">
+<tr>
+<th>Product</th>
+<th>Stock</th>
+</tr>
+</table>
+
+<script>
+
+let stock = JSON.parse(localStorage.getItem("stock")) || {};
+
+function addStock(){
+
+let name = document.getElementById("productName").value;
+let qty = parseInt(document.getElementById("productQty").value);
+
+if(name=="" || isNaN(qty)){
+alert("Enter product and quantity");
+return;
+}
+
+if(stock[name]){
+stock[name] += qty;
+}else{
+stock[name] = qty;
+}
+
+localStorage.setItem("stock", JSON.stringify(stock));
+
+displayStock();
+
+}
+
+function displayStock(){
+
+let table = document.getElementById("stockTable");
+
+table.innerHTML = "<tr><th>Product</th><th>Stock</th></tr>";
+
+for(let item in stock){
+
+let row = table.insertRow();
+
+row.insertCell(0).innerText = item;
+row.insertCell(1).innerText = stock[item];
+
+}
+
+}
+
+function clearStock(){
+
+localStorage.removeItem("stock");
+
+alert("Stock Cleared");
+
+location.reload();
+
+}
+
+displayStock();
+
+</script>
+</div>
+</body>
+</html>
